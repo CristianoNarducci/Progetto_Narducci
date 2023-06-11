@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <title>My Music Streaming</title>
+    {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+          <li><a href="{% url 'playlists:home' %}">Home</a></li>
+          <li><a href="{% url 'songs:artists' %}">Discover Artist</a></li>
+          <li><a href="{% url 'songs:library' %}">My Library</a></li>
+          {% if request.user.is_authenticated %}
+              <li id="but-login"><a href="{% url 'playlists:logout' %}">Logout</a></li>
+              <li><a>{{request.user.username}}</a></li>
+          {% else %}
+              <li id="but-login"><a href="{% url 'playlists:login' %}">Login</a></li>
+              <li><a href="{% url 'playlists:signup' %}">SignUp</a></li>
+          {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to My Music Streaming</h1>
+      <p>Listen to your favorite songs anytime, anywhere.</p>
+      <a href="{% url 'songs:songlist' %}" class="btn btn-primary">Sfoglia le canzoni</a>
+    </section>
+
+    <section class="featured-playlists">
+      <h2>Featured Playlists</h2>
+      <div class="playlist-grid">
+        {% for play in play %}
+            <div class="playlist">
+            <img src="{{play.image.url}}" alt="Playlist 1">
+            <h3>{{play.name}}</h3>
+            {{ play.songs.all|join:", "}}
+            </div>
+        {% endfor %}
+        <!-- Add more playlists -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 My Music Streaming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

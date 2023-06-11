@@ -1,0 +1,32 @@
+.song-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.song-card {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #666666;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.song-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.song-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.song-card p {
+  font-size: 14px;
+  color: #666;
+}

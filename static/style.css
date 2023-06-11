@@ -1,0 +1,189 @@
+/* style.css */
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav{
+  width: 100%;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: start;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Main styles */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #1db954;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #1db954;
+}
+
+/* Featured playlists styles */
+.featured-playlists {
+  margin-top: 40px;
+}
+
+.featured-playlists h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.playlist {
+  text-align: center;
+}
+
+.playlist img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.playlist h3 {
+  font-size: 18px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Login button styles */
+nav ul li.login-btn {
+  margin-right: 0;
+}
+
+nav ul li.login-btn a {
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li.login-btn a:hover {
+  background-color: #fff;
+  color: #333;
+}
+/* Aggiungi questi stili al tuo file CSS principale */
+
+/* Stili per il form di login */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #3276b1;
+}
+#but-login{
+  margin-left: auto;
+}

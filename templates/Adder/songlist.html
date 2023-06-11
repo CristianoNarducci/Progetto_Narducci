@@ -1,0 +1,26 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Elenco canzoni</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styleLibrary.css' %}">
+</head>
+<body>
+    {% for song in song %}
+        <div class="song-card">
+            <img alt="immagine" src="{{ song.image.url }}">
+            <h2>{{ song.title }}</h2>
+            <h3>{{ song.artist }}</h3>
+            <form action="{% url 'songs:addSong' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="song_id" value="{{ song }}">
+                <input type="hidden" name="user_id" value="{{ user.email }}">
+                <button type="submit">Aggiungi alle tue canzoni</button>
+            </form>
+        </div>
+    {% endfor %}
+</body>
+</html>
+{% endblock %}

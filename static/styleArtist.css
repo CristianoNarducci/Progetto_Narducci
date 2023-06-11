@@ -1,0 +1,41 @@
+.artist-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.artist-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 10px;
+  background-color: #f7f7f7;
+}
+
+.artist-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+p{
+  text-align: center;
+}
+h4 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+li {
+  text-align: center;
+}
+.artist-card h3 {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
+
+.artist-card p {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}

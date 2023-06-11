@@ -1,0 +1,28 @@
+{%block content%}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styleLibrary.css' %}">
+</head>
+<body>
+    <h1>Le Tue Canzoni:</h1>
+    <div class="song-container">
+        {% for song in songs %}
+        {% if song in user.songs.all %}
+            <div class="song-card">
+                <img alt="image" src="{{ song.image.url }}">
+                <h2>Titolo: {{ song.title }}</h2>
+                <h3>Artista: {{ song.artist }}</h3>
+                <h4>Album: {{ song.album }}</h4>
+            </div>
+        {% endif %}
+        {% empty %}
+            <h1>Non hai ancora aggiunto canzoni alla tua libreria</h1>
+    {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}
