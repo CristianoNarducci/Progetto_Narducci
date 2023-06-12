@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import Song,Artist
 from users import models as users
 
@@ -36,3 +36,17 @@ def addSong(request):
                 return HttpResponse("La canzone è stata aggiunta alla tua libreria")
             else:
                 return HttpResponse("La canzone è già presente nella tua libreria")
+
+def removeSong(request):
+    if request.method == 'POST':
+        song_id = request.POST.get('song_id')
+        user_id = request.POST.get('user_id')
+        if song_id:
+            song = Song.object.get(title=song_id)
+            user = users.Profile.objects.get(email=user_id)
+            user.songs.remove(song)
+            user.save()
+            return HttpResponse("La canzone è stata rimossa dalla tua libreria")
+        else:
+            return HttpResponse("La canzone non è presente nella tua libreria")
+

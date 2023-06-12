@@ -17,6 +17,12 @@
                 <h2>Titolo: {{ song.title }}</h2>
                 <h3>Artista: {{ song.artist }}</h3>
                 <h4>Album: {{ song.album }}</h4>
+                <form action="{% url 'songs:removeSong' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="song_id" value="{{ song}}">
+                    <input type="hidden" name="user_id" value="{{ user.email}}">
+                    <button type="submit">Rimuovi dalla tua libreria</button>
+                </form>
             </div>
         {% endif %}
         {% empty %}
