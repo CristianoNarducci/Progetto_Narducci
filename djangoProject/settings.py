@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
+CSRF_TRUSTED_ORIGINS = ['https://progettonarducci-production.up.railway.app/signup/']
 
 LOGIN_REDIRECT_URL = 'default:home'
 INSTALLED_APPS = [
